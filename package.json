@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "concurrently \"cd ./react-platform && npm run start\" \" cd ./back/backAzurePlatform && nodemon start \""
+  },
+  "dependencies": {
+    "node-powershell": "^5.0.1"
+  }
+}

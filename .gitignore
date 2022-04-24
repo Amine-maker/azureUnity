@@ -1,0 +1,5 @@
+/back/backAzurePlatform/node_modules
+/Lib/site-packages
+/react-platform/node_modules
+.vs
+.vscode
