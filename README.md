@@ -15,8 +15,8 @@ npm i
 
 Puis
 npm start
-```
 à la racine du projet, ce qui démarrera les deux serveurs
+```
 
 
 
