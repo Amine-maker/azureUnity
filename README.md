@@ -1,12 +1,12 @@
 # Azure unity 
 
-## prérequis
+## Prérequis
  - Azure CLI https://docs.microsoft.com/fr-fr/cli/azure/install-azure-cli-windows?tabs=azure-cli
  - npm 
  - nodejs
 
 
- ## lancer le projet
+ ## Lancer le projet
 ```
 cd ./back
 npm i 
