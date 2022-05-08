@@ -8,7 +8,7 @@
 
  ## Lancer le projet
 ```
-cd ./back
+cd ./back/backAzurePlatform
 npm i 
 cd ./react-platform
 npm i 
