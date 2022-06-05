@@ -6,6 +6,8 @@ import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Modal from "@mui/material/Modal";
+
 import AccessTimeTwoToneIcon from "@mui/icons-material/AccessTimeTwoTone";
 import styled from "@emotion/styled";
 import img from "../assets/images/0b447c2fb9c964785f97fb41cf76b619.jpg";
@@ -23,6 +25,20 @@ const GameItem = (props) => {
   const { gameData } = props;
   const [play, setPlay] = useState(false);
   const [error, setError] = useState(false);
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
 
   useEffect(() => {
     if (play) {
@@ -32,6 +48,7 @@ const GameItem = (props) => {
           setPlay(false);
         })
         .catch((err) => {
+          setPlay(false);
           setError(true);
         });
     }
@@ -39,10 +56,26 @@ const GameItem = (props) => {
 
   const HandleClick = () => {
     setPlay(true);
+    setOpen(true);
   };
 
   return (
     <div className="blur">
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Veuillez patientez
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Le jeu va etre lancé dans une nouvelle fenêtre
+          </Typography>
+        </Box>
+      </Modal>
       <Card
         variant="outlined"
         sx={{
